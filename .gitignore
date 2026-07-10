@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Build
+build/
+dist/
+
+# Logs
+logs/
+
+# AVR build outputs
+*.elf
+*.lss
+*.map
