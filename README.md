@@ -10,7 +10,7 @@ emb frees you from tedious tester work during your valuable time off so you can 
 ## Install
 
 ```bash
-pip install emb
+pip install emb-loop
 
 
 ## Usage
