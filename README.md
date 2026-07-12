@@ -1,5 +1,5 @@
 # emb-loop
-emb-loop  -  "Embedded development boards for the AI era"
+emb-loop  -  "A common platform for AI to develop, check, write, and test embedded software on its own"
 
 emb is an AI-native embedded development framework.
 It closes the loop between code generation, flashing, hardware observation, and AI feedback.
