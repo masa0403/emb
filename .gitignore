@@ -1,16 +1,13 @@
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
 .venv/
 
-# Build
-build/
-dist/
+# VS Code
+.vscode/
 
-# Logs
-logs/
-
-# AVR build outputs
-*.elf
-*.lss
-*.map
+# OS
+.DS_Store
