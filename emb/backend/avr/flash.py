@@ -22,7 +22,7 @@ def create_log_file(mcu: str) -> Path:
 # ------------------------------------------------------------
 # 書き込み（AVR 専用）
 # ------------------------------------------------------------
-def flash(hex_file, toolchain, mcu, port):
+def flash_hex(hex_file, toolchain, mcu, port):
 
     avrdude = toolchain["avrdude"]
     avrdude_conf = toolchain["avrdude_conf"]

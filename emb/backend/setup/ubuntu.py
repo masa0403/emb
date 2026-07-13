@@ -7,7 +7,7 @@ TOOLS = {
     "avrdude": "avrdude",
 }
 
-def check_avr_toolchain():
+def check_ubuntu_avr_toolchain():
     print("Checking AVR toolchain...\n")
 
     missing = []

@@ -1,10 +1,12 @@
 # emb/commands/setup.py
 
 import sys
-from emb.backend.setup.ubuntu import check_avr_toolchain
+from emb.backend.setup.ubuntu import check_ubuntu_avr_toolchain
 from emb.backend.avr.toolchain import resolve_avr_toolchain
-from emb.backend.avr.flash import flash
+from emb.backend.avr.flash import flash_hex
 from emb.backend.avr.compile import compile_source
+from emb.backend.setup.detect import detect_os
+
 
 def main(args):
     if len(args) == 0:
@@ -13,17 +15,23 @@ def main(args):
 
     target = args[0].lower()
 
-    if target == "nano":
-        print("Nano setup is not implemented in this snippet.")
+    # OS 自動判定
+    os_name = detect_os()
+
+    # OS ごとに check 関数をロード
+    if os_name == "ubuntu":
+        from emb.backend.setup.ubuntu import check_ubuntu_avr_toolchain
+    else:
+        print("Unsupported OS")
         return
 
-    elif target == "attiny202":
-        check_avr_toolchain()
-        toolchain = resolve_toolchain("attiny202")
-        port = args[2]
-        source_file = args[1]
-        file = compile_source(source_file, toolchain, target)
-        flash(file, port, toolchain)
+    if target == "attiny202":
+        print(f"Detected OS: {os_name}")
+        print("Checking environment for ATtiny202...")
+        check_ubuntu_avr_toolchain()
+        print("Setting up environment for ATtiny202...")
+        resolve_avr_toolchain("attiny202")
+        print("ATtiny202 environment is ready.")
         return
 
     else:
