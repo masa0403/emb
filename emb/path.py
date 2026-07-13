@@ -6,7 +6,7 @@ ROOT = PACKAGE
 
 BOARDS = PACKAGE / "boards"
 FIRMWARE = PACKAGE / "firmware"
-EXAMPLES = PACKAGE / "examples"
+SOURCES = PACKAGE / "sources"
 
 BUILD = PACKAGE.parent / "build"
 LOGS = PACKAGE.parent / "logs"

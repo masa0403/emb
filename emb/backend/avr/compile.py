@@ -1,6 +1,7 @@
 from pathlib import Path
 import subprocess
-from emb.path import BUILD, PACKAGE, EXAMPLES
+from emb.path import BUILD, PACKAGE, SOURCES
+
 
 # -----------------------------
 # コンパイル
@@ -14,8 +15,8 @@ def compile_source(source_file, toolchain, board):
 
     candidates = [
         PACKAGE / source_file,
-        EXAMPLES / board / source_file,
-        EXAMPLES / source_file,
+        SOURCES / board / source_file,
+        SOURCES / source_file,
         source,
     ]
 

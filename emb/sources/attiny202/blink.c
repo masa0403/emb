@@ -10,7 +10,7 @@ int main(void)
     while(1)
     {
         PORTA.OUTSET = PIN2_bm;
-        _delay_ms(100);
+        _delay_ms(1000);
 
 
         PORTA.OUTCLR = PIN2_bm;

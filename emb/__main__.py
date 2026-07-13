@@ -12,8 +12,21 @@ def main():
     if len(sys.argv) < 2:
         print(
             "Usage:\n"
-            " python -m emb <board> <source> <port>"
+            "\n"
+            "1. Setup\n"
+            "   emb setup <target_mcu_name>\n"
+            "\n"
+            "2. Flash & Log\n"
+            "   emb <target_mcu_name> <source_code> <port>\n"
+            "\n"
+            "Note 😉\n"
+            "   Place your source code under:\n"
+            "   emb-loop/emb/sources/<target_mcu_name>/\n"
+            "\n"
+            "Example:\n"
+            "   emb-loop/emb/sources/attiny202/blink.c\n"
         )
+
         return
 
     first = sys.argv[1]
