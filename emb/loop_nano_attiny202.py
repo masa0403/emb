@@ -20,7 +20,7 @@ flash_avr(hex_path, "nano", detect_nano_port())
 # ---------------------------------------------------------
 # Step 2: 補正済み F_CPU で ATtiny202 に本番コードを書き込む
 # ---------------------------------------------------------
-SOURCE_MAIN  = Path("target_mcu/attiny202/codes/blink.c")
+SOURCE_MAIN  = Path("target_mcu/attiny202/codes/test_202.c")
 BOARD = "attiny202"
 OUTPUT = Path("target_mcu/attiny202/codes_compiled")
 OUTPUT.mkdir(exist_ok=True)

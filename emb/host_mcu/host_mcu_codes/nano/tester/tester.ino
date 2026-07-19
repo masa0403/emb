@@ -4,6 +4,8 @@
 
 #include "serial_sender.h"
 
+#include "test_executor.h"
+
 PinMonitor monitors[MONITOR_COUNT];
 
 void setup()
@@ -20,13 +22,19 @@ void setup()
     {
         monitors[i].begin(MONITOR_PINS[i], MONITOR_NAMES[i]);
     }
+
+    testExecutor.begin();
+
 }
 
 void loop()
 {
+    testExecutor.update();
+    
     for(uint8_t i=0;i<MONITOR_COUNT;i++)
     {
         monitors[i].update();
     }
+
     serialSender.update();
 }
