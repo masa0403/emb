@@ -30,3 +30,8 @@ bool Logger::getEvent(PinEvent& event)
 {
     return buffer.pop(event);
 }
+
+void Logger::onEvent(const PinEvent& event)
+{
+    logger.buffer.push(event);
+}

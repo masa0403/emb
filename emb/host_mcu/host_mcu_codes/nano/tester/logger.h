@@ -20,6 +20,8 @@ private:
     RingBuffer buffer;
 
     uint32_t sequence;
+
+    static void onEvent(const PinEvent& event);
 };
 
 extern Logger logger;

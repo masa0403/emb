@@ -6,6 +6,8 @@
 
 #include "test_executor.h"
 
+#include "event_bus.h"
+
 PinMonitor monitors[MONITOR_COUNT];
 
 void setup()
@@ -15,6 +17,8 @@ void setup()
     delay(2000);
 
     logger.begin();
+
+    eventBus.begin();
 
     serialSender.begin();
 
