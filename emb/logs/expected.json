@@ -1,0 +1,12 @@
+{
+    "events": [
+        {
+            "pin": "ATtiny202.PA2",
+            "type": "RISE"
+        },
+        {
+            "pin": "ATtiny202.PA2",
+            "type": "FALL"
+        }
+    ]
+}

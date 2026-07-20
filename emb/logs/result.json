@@ -1,0 +1,11 @@
+{
+    "status": "FAIL",
+    "expected_count": 1,
+    "actual_count": 2,
+    "missing": [
+        {
+            "pin": "attiny202.PA6",
+            "type": "RISE"
+        }
+    ]
+}

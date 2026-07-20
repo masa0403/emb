@@ -1,0 +1,27 @@
+{
+    "version":1,
+
+    "target_mcu":{
+        "name":"ATtiny202"
+    },
+
+    "test":{
+        "name":"PA2 toggle test",
+
+        "description":
+        "Verify that PA2 changes HIGH and LOW"
+    },
+
+    "expected_events":[
+
+        {
+            "pin":"PA2",
+            "type":"RISE"
+        },
+
+        {
+            "pin":"PA2",
+            "type":"FALL"
+        }
+    ]
+}

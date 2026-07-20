@@ -20,9 +20,9 @@ constexpr uint8_t MONITOR_PINS[MONITOR_COUNT] =
 
 constexpr const char* MONITOR_NAMES[MONITOR_COUNT] =
 {
-    "attiny202.PA2",
-    "attiny202.PA3",
-    "attiny202.PA6"
+    "ATtiny202.PA2",
+    "ATtiny202.PA3",
+    "ATtiny202.PA6"
 };
 
 #endif

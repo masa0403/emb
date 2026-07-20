@@ -1,6 +1,5 @@
 #emb/loop_nano_attiny202.py
 from pathlib import Path
-import subprocess
 from host_mcu.code_utility import load_calib, detect_nano_port
 from host_mcu.logger import measure_period, receive_serial_log
 from host_mcu.compile_flash import (
@@ -11,41 +10,6 @@ from host_mcu.compile_flash import (
 )
 from serial_json import save_latest_json
 
-def run_command(cmd):
-
-    print(">>", " ".join(cmd))
-
-    subprocess.check_call(cmd)
-
-
-
-def generate_testplan():
-
-    print("[Step0-1] Generate nano_test_plan")
-
-    run_command([
-        "python3",
-        "generate_testplan.py"
-    ])
-
-
-
-def generate_nano_code():
-
-    print("[Step0-2] Generate test_plan.cpp")
-
-    run_command([
-        "python3",
-        "generate_nano_code.py"
-    ])
-
-# ---------------------------------------------------------
-# Step 0: AI TestPlan Generation
-# ---------------------------------------------------------
-
-generate_testplan()
-
-generate_nano_code()
 
 # ---------------------------------------------------------
 # Step 1: Target Flashing! Nano を再び JTAG2UPDI 化

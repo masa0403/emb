@@ -1,0 +1,24 @@
+{
+    "version": 1,
+    "commands": [
+        {
+            "cmd": "DELAY",
+            "value": 1000
+        },
+        {
+            "cmd": "PIN_HIGH",
+            "pin": "D7"
+        },
+        {
+            "cmd": "DELAY",
+            "value": 100
+        },
+        {
+            "cmd": "PIN_LOW",
+            "pin": "D7"
+        },
+        {
+            "cmd": "END"
+        }
+    ]
+}

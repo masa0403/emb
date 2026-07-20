@@ -32,10 +32,8 @@ def receive_serial_log(duration_sec=10):
     ser = serial.Serial(port, 115200, timeout=0.2)
 
     time.sleep(2)      # リセット待ち
-    wait_ready(ser)    # READYを待つ
-    ser.reset_input_buffer()
-
-    logs = []
+    logs=[]
+    wait_ready(ser, logs)
 
     start = time.time()
 
@@ -56,16 +54,27 @@ def receive_serial_log(duration_sec=10):
 
     return logs
 
-def wait_ready(ser, timeout=5):
-    start = time.time()
+def wait_ready(ser, logs, timeout=5):
 
-    while time.time() - start < timeout:
-        line = ser.readline().decode(errors="replace").strip()
+    start=time.time()
+
+    while time.time()-start < timeout:
+
+        line=ser.readline().decode(
+            errors="replace"
+        ).strip()
+
 
         if line:
+
             print(line)
 
-        if line == "#SYS,STATUS,READY":
+            logs.append(line)
+
+
+        if line=="#SYS,STATUS,READY":
+
             return True
+
 
     return False

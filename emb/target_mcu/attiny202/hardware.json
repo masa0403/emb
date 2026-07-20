@@ -1,0 +1,27 @@
+{
+    "version":1,
+
+    "target_mcu":{
+        "name":"ATtiny202",
+
+        "pins":{
+            "PA2":"D7",
+            "PA3":"D8",
+            "PA6":"D9",
+            "PA7":"D10",
+            "PA1":"D11"
+        }
+    },
+
+    "host_mcu":{
+        "name":"Arduino Nano",
+
+        "monitor_pins":{
+            "D7":"target.PA2",
+            "D8":"target.PA3",
+            "D9":"target.PA6",
+            "D10":"target.PA7",
+            "D11":"target.PA1"
+        }
+    }
+}

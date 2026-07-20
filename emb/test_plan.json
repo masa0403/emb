@@ -1,0 +1,30 @@
+{
+    "version":1,
+
+    "commands":[
+
+        {
+            "cmd":"DELAY",
+            "value":1000
+        },
+
+        {
+            "cmd":"PIN_HIGH",
+            "pin":"PA2"
+        },
+
+        {
+            "cmd":"DELAY",
+            "value":100
+        },
+
+        {
+            "cmd":"PIN_LOW",
+            "pin":"PA2"
+        },
+
+        {
+            "cmd":"END"
+        }
+    ]
+}

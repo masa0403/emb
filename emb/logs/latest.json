@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "events": [
+        {
+            "seq": 0,
+            "time_us": 4010288,
+            "pin": "ATtiny202.PA2",
+            "type": "RISE"
+        },
+        {
+            "seq": 1,
+            "time_us": 4111652,
+            "pin": "ATtiny202.PA2",
+            "type": "FALL"
+        }
+    ],
+    "tester_log": [
+        "#TEST,0,DELAY,1000",
+        "#TEST,1,PIN_HIGH,D7",
+        "#TEST,2,DELAY,100",
+        "#TEST,3,PIN_LOW,D7"
+    ],
+    "system": [
+        "#SYS,STATUS,BEGIN",
+        "#SYS,NAME,NanoTester01",
+        "#SYS,VERSION,1.0",
+        "#SYS,MONITOR,ATtiny202.PA2",
+        "#SYS,MONITOR,ATtiny202.PA3",
+        "#SYS,MONITOR,ATtiny202.PA6",
+        "#SYS,STATUS,READY"
+    ]
+}

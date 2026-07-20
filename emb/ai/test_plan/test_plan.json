@@ -1,0 +1,18 @@
+{
+    "test_name":"attiny202_pwm_test",
+
+    "commands":[
+
+        {
+            "command":"PIN_HIGH",
+            "pin":"PA2"
+        },
+
+        {
+            "command":"WAIT_EVENT",
+            "pin":"PA6",
+            "event":"RISE"
+        }
+
+    ]
+}
