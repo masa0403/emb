@@ -1,11 +1,25 @@
 {
     "status": "FAIL",
-    "expected_count": 1,
-    "actual_count": 2,
+    "expected_count": 4,
+    "actual_count": 4,
     "missing": [
         {
-            "pin": "attiny202.PA6",
+            "pin": "ATtiny202.PA3",
             "type": "RISE"
+        },
+        {
+            "pin": "ATtiny202.PA3",
+            "type": "FALL"
+        }
+    ],
+    "extra": [
+        {
+            "pin": "ATtiny202.PA6",
+            "type": "RISE"
+        },
+        {
+            "pin": "ATtiny202.PA6",
+            "type": "FALL"
         }
     ]
 }

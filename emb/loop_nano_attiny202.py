@@ -11,6 +11,7 @@ from host_mcu.compile_flash import (
 )
 from serial_json import save_latest_json
 
+
 def run_command(cmd):
 
     print(">>", " ".join(cmd))
@@ -28,22 +29,33 @@ def generate_testplan():
         "generate_testplan.py"
     ])
 
+def generate_expected():
 
+    print("[Step0-2] Generate expected.json")
+
+    run_command([
+        "python3",
+        "generate_expected.py"
+    ])
 
 def generate_nano_code():
 
-    print("[Step0-2] Generate test_plan.cpp")
+    print("[Step0-3] Generate test_plan.cpp")
 
     run_command([
         "python3",
         "generate_nano_code.py"
     ])
 
+
+
 # ---------------------------------------------------------
 # Step 0: AI TestPlan Generation
 # ---------------------------------------------------------
 
 generate_testplan()
+
+generate_expected()
 
 generate_nano_code()
 
@@ -90,3 +102,18 @@ logs = receive_serial_log(5)
 print(logs)
 
 save_latest_json(logs)
+
+print("[Step8] Compare result")
+
+run_command([
+    "python3",
+    "compare.py"
+])
+
+
+print("[Step9] Generate AI feedback")
+
+run_command([
+    "python3",
+    "generate_ai_feedback.py"
+])

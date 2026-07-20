@@ -1,27 +1,28 @@
 {
-    "version":1,
-
-    "target_mcu":{
-        "name":"ATtiny202"
+    "version": 1,
+    "target_mcu": {
+        "name": "ATtiny202"
     },
-
-    "test":{
-        "name":"PA2 toggle test",
-
-        "description":
-        "Verify that PA2 changes HIGH and LOW"
+    "test": {
+        "name": "PA2 PA3 tracking test",
+        "description": "Verify PA3 follows PA2 state changes"
     },
-
-    "expected_events":[
-
+    "expected_events": [
         {
-            "pin":"PA2",
-            "type":"RISE"
+            "pin": "PA2",
+            "type": "RISE"
         },
-
         {
-            "pin":"PA2",
-            "type":"FALL"
+            "pin": "PA3",
+            "type": "RISE"
+        },
+        {
+            "pin": "PA2",
+            "type": "FALL"
+        },
+        {
+            "pin": "PA3",
+            "type": "FALL"
         }
     ]
 }

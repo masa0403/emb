@@ -79,7 +79,6 @@ def compare():
 
     missing=[]
 
-
     for event in expected["events"]:
 
         if event not in actual_events:
@@ -88,23 +87,49 @@ def compare():
 
 
 
+    extra=[]
+
+    for event in actual_events:
+
+        if event not in expected["events"]:
+
+            extra.append(event)
+
+
+
     if missing:
 
-        result={
-            "status":"FAIL",
-            "expected_count":len(expected["events"]),
-            "actual_count":len(actual_events),
-            "missing":missing
-        }
+        status="FAIL"
 
     else:
 
-        result={
-            "status":"PASS",
-            "expected_count":len(expected["events"]),
-            "actual_count":len(actual_events),
-            "missing":[]
-        }
+        status="PASS"
+
+
+
+    result={
+
+        "status":status,
+
+        "expected_count":len(expected["events"]),
+
+        "actual_count":len(actual_events),
+
+        "missing":missing,
+
+        "extra":extra
+
+    }
+
+
+    output_path = "logs/result.json"
+
+    with open(output_path, "w") as f:
+        json.dump(
+            result,
+            f,
+            indent=4
+        )
 
 
     print(
@@ -114,6 +139,7 @@ def compare():
         )
     )
 
+    print(f"Result saved: {output_path}")
 
 
 if __name__=="__main__":

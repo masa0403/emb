@@ -9,8 +9,20 @@
         },
         {
             "seq": 1,
-            "time_us": 4111652,
+            "time_us": 4010308,
+            "pin": "ATtiny202.PA6",
+            "type": "RISE"
+        },
+        {
+            "seq": 2,
+            "time_us": 4112680,
             "pin": "ATtiny202.PA2",
+            "type": "FALL"
+        },
+        {
+            "seq": 3,
+            "time_us": 4112700,
+            "pin": "ATtiny202.PA6",
             "type": "FALL"
         }
     ],

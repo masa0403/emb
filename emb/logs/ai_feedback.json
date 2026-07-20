@@ -1,0 +1,111 @@
+{
+    "version": 1,
+    "role": "embedded_debug_ai",
+    "context": {
+        "target_mcu": "ATtiny202",
+        "host_mcu": "Arduino Nano",
+        "hardware": {
+            "version": 1,
+            "target_mcu": {
+                "name": "ATtiny202",
+                "pins": {
+                    "PA2": "D7",
+                    "PA3": "D8",
+                    "PA6": "D9",
+                    "PA7": "D10",
+                    "PA1": "D11"
+                }
+            },
+            "host_mcu": {
+                "name": "Arduino Nano",
+                "monitor_pins": {
+                    "D7": "target.PA2",
+                    "D8": "target.PA3",
+                    "D9": "target.PA6",
+                    "D10": "target.PA7",
+                    "D11": "target.PA1"
+                }
+            }
+        },
+        "test_request": {
+            "version": 1,
+            "target_mcu": {
+                "name": "ATtiny202"
+            },
+            "test": {
+                "name": "PA2 PA3 tracking test",
+                "description": "Verify PA3 follows PA2 state changes"
+            },
+            "expected_events": [
+                {
+                    "pin": "PA2",
+                    "type": "RISE"
+                },
+                {
+                    "pin": "PA3",
+                    "type": "RISE"
+                },
+                {
+                    "pin": "PA2",
+                    "type": "FALL"
+                },
+                {
+                    "pin": "PA3",
+                    "type": "FALL"
+                }
+            ]
+        },
+        "test_plan": {
+            "version": 1,
+            "commands": [
+                {
+                    "cmd": "DELAY",
+                    "value": 1000
+                },
+                {
+                    "cmd": "PIN_HIGH",
+                    "pin": "D7"
+                },
+                {
+                    "cmd": "DELAY",
+                    "value": 100
+                },
+                {
+                    "cmd": "PIN_LOW",
+                    "pin": "D7"
+                },
+                {
+                    "cmd": "END"
+                }
+            ]
+        }
+    },
+    "evaluation": {
+        "status": "FAIL",
+        "expected_events": 4,
+        "actual_events": 4
+    },
+    "failure_analysis": {
+        "missing_events": [
+            {
+                "pin": "ATtiny202.PA3",
+                "type": "RISE"
+            },
+            {
+                "pin": "ATtiny202.PA3",
+                "type": "FALL"
+            }
+        ],
+        "unexpected_events": [
+            {
+                "pin": "ATtiny202.PA6",
+                "type": "RISE"
+            },
+            {
+                "pin": "ATtiny202.PA6",
+                "type": "FALL"
+            }
+        ]
+    },
+    "instruction": "Analyze missing hardware events. Determine whether firmware, timing, pin assignment, or test plan should be modified."
+}
